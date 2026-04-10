@@ -25,7 +25,7 @@ export default function HowItWorks() {
             <div className="w-full aspect-video rounded-xl overflow-hidden shadow-md">
               <iframe
                 title="Video para pacientes"
-                src="https://www.loom.com/embed/6895892e16a54c0b9b74e02b862753a6?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+                src="https://www.loom.com/embed/148026ef032f4258a74b2d7ea7e1becb?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen
@@ -48,7 +48,7 @@ export default function HowItWorks() {
             <div className="w-full aspect-video rounded-xl overflow-hidden shadow-md">
               <iframe
                 title="Video para doctores"
-                src="https://www.loom.com/embed/8e6dedd4344d4fdcb1873db9bdbd2e35?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+                src="https://www.loom.com/embed/ca9dd463024b4fcd8e4b38bdc8e8f2d2?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen
