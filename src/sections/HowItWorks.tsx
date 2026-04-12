@@ -25,7 +25,7 @@ export default function HowItWorks() {
             <div className="w-full aspect-video rounded-xl overflow-hidden shadow-md">
               <iframe
                 title="Video para pacientes"
-                src="https://www.loom.com/embed/148026ef032f4258a74b2d7ea7e1becb?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+                 src="https://www.loom.com/embed/9ba4b8ad25c34e6385d141b0ed302d2c?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen
