@@ -82,7 +82,7 @@ export default function Hero() {
           className="mt-4"
         >
           <a
-            href="https://enlacepaciente.com"
+            href="https://enlace-salud-seven.vercel.app/"
             target="_blank"
             className="text-sm text-gray-600 hover:text-primary underline transition"
           >
