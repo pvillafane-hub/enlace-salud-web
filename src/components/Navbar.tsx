@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,6 +12,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -24,12 +26,24 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        {/* LOGO */}
-        <a href="#" className="text-xl font-bold text-[#2563EB]">
-          Enlace Salud
+        <a
+          href="/"
+          className="flex items-center gap-2.5"
+        >
+          <Image
+            src="/enlace-salud-icon-transparent.png"
+            alt="Enlace Salud"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain"
+            priority
+          />
+
+          <span className="text-[19px] font-semibold tracking-tight text-[#2563EB]">
+            Enlace Salud
+          </span>
         </a>
 
-        {/* CTA */}
         <button
           onClick={() =>
             window.open(
