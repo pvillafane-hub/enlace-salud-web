@@ -19,9 +19,6 @@ export default function LandingPage({ audience }: { audience: Audience }) {
           </Link>
           <a className="inline-flex min-h-12 items-center rounded-xl border border-blue-700 px-4 font-semibold text-blue-700 hover:bg-blue-50" href={`${PRODUCT_URL}/login`}>Entrar</a>
         </div>
-        <nav aria-label="Elige tu perfil" className="mx-auto flex max-w-6xl flex-wrap gap-x-4 px-4 sm:px-6">
-          {Object.entries(audiences).map(([key, item]) => <Link key={key} href={item.href} aria-current={key === audience ? "page" : undefined} className={`inline-flex min-h-12 items-center border-b-2 text-sm font-semibold sm:text-base ${key === audience ? "border-blue-700 text-blue-700" : "border-transparent text-slate-600 hover:text-blue-700"}`}>{item.label}</Link>)}
-        </nav>
       </header>
       <main id="contenido">
         <section className="bg-gradient-to-b from-blue-50 to-white px-4 py-16 sm:px-6 sm:py-24">
