@@ -1,26 +1,12 @@
-import Hero from "@/sections/clinicas330/Hero";
-import Problem from "@/sections/clinicas330/Problem";
-import Solution from "@/sections/clinicas330/Solution";
-import HowItWorks from "@/sections/clinicas330/HowItWorks";
-import Benefits from "@/sections/clinicas330/Benefits";
-import Trust from "@/sections/clinicas330/Trust";
-import CTA from "@/sections/clinicas330/CTA";
-import Navbar from "@/components/clinicas330/Navbar";
+import type { Metadata } from "next";
+import LandingPage from "@/components/LandingPage";
+import { audiences } from "@/lib/landing-content";
 
-export default function Clinicas330Page() {
-  return (
-    <>
-      <Navbar />
+export const metadata: Metadata = {
+  title: "Para clínicas y centros 330 | Enlace Salud",
+  description: audiences.clinicas330.intro,
+};
 
-      <main className="bg-white text-gray-900">
-        <Hero />
-        <Problem />
-        <Solution />
-        <HowItWorks />
-        <Benefits />
-        <Trust />
-        <CTA />
-      </main>
-    </>
-  );
+export default function Page() {
+  return <LandingPage audience="clinicas330" />;
 }

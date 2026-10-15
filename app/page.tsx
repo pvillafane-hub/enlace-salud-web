@@ -1,26 +1,12 @@
-import Hero from "@/sections/Hero";
-import Problem from "@/sections/Problem";
-import Solution from "@/sections/Solution";
-import HowItWorks from "@/sections/HowItWorks";
-import Benefits from "@/sections/Benefits";
-import Trust from "@/sections/Trust";
-import CTA from "@/sections/CTA";
-import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import LandingPage from "@/components/LandingPage";
+import { audiences } from "@/lib/landing-content";
 
-export default function Home() {
-  return (
-    <>
-      <Navbar />
+export const metadata: Metadata = {
+  title: "Para doctores | Enlace Salud",
+  description: audiences.doctor.intro,
+};
 
-      <main className="bg-white text-gray-900">
-        <Hero />
-        <Problem />
-        <Solution />
-        <HowItWorks />
-        <Benefits />
-        <Trust />
-        <CTA />
-      </main>
-    </>
-  );
+export default function Page() {
+  return <LandingPage audience="doctor" />;
 }

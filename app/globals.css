@@ -11,3 +11,6 @@ html, body {
 * {
   box-sizing: border-box;
 }
+body { font-family: var(--font-geist-sans), Arial, sans-serif; }
+a:focus-visible { outline: 3px solid #2563eb; outline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

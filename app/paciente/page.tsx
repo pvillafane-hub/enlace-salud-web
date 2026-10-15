@@ -1,26 +1,12 @@
-import Hero from "@/sections/paciente/Hero";
-import Problem from "@/sections/paciente/Problem";
-import Solution from "@/sections/paciente/Solution";
-import HowItWorks from "@/sections/paciente/HowItWorks";
-import Benefits from "@/sections/paciente/Benefits";
-import Trust from "@/sections/paciente/Trust";
-import CTA from "@/sections/paciente/CTA";
-import Navbar from "@/components/paciente/Navbar";
+import type { Metadata } from "next";
+import LandingPage from "@/components/LandingPage";
+import { audiences } from "@/lib/landing-content";
 
-export default function PacientePage() {
-  return (
-    <>
-      <Navbar />
+export const metadata: Metadata = {
+  title: "Para pacientes y familias | Enlace Salud",
+  description: audiences.paciente.intro,
+};
 
-      <main className="bg-white text-gray-900">
-        <Hero />
-        <Problem />
-        <Solution />
-        <HowItWorks />
-        <Benefits />
-        <Trust />
-        <CTA />
-      </main>
-    </>
-  );
+export default function Page() {
+  return <LandingPage audience="paciente" />;
 }
