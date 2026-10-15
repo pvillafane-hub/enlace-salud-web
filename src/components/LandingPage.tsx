@@ -17,7 +17,7 @@ export default function LandingPage({ audience }: { audience: Audience }) {
             <Image src="/enlace-salud-icon-transparent.png" alt="" width={40} height={40} priority />
             <span className="text-lg sm:text-xl">Enlace Salud</span>
           </Link>
-          <a className="inline-flex min-h-12 items-center rounded-xl border border-blue-700 px-4 font-semibold text-blue-700 hover:bg-blue-50" href={`${PRODUCT_URL}/login`}>Entrar</a>
+          <a className="inline-flex min-h-12 items-center rounded-xl border border-blue-700 px-4 font-semibold text-blue-700 hover:bg-blue-50" href={`${PRODUCT_URL}/`}>Entrar</a>
         </div>
       </header>
       <main id="contenido">
@@ -66,7 +66,7 @@ export default function LandingPage({ audience }: { audience: Audience }) {
           </div>
         </section>
         <section className="bg-blue-800 px-4 py-16 text-center text-white sm:px-6">
-          <div className="mx-auto max-w-3xl"><h2 className="text-3xl font-bold sm:text-4xl">{data.closing}</h2><a className="mt-8 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-blue-800 hover:bg-blue-50" href={actionHref}>{data.action}</a><p className="mt-5 text-base text-blue-100">¿Ya tienes cuenta? <a className="inline-flex min-h-12 items-center font-semibold underline underline-offset-4" href={`${PRODUCT_URL}/login`}>Entra aquí</a></p></div>
+          <div className="mx-auto max-w-3xl"><h2 className="text-3xl font-bold sm:text-4xl">{data.closing}</h2><a className="mt-8 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-blue-800 hover:bg-blue-50" href={actionHref}>{data.action}</a><p className="mt-5 text-base text-blue-100">¿Ya tienes cuenta? <a className="inline-flex min-h-12 items-center font-semibold underline underline-offset-4" href={`${PRODUCT_URL}/`}>Entra aquí</a></p></div>
         </section>
       </main>
       <footer className="px-4 py-8 text-center text-base text-slate-600"><p>Enlace Salud · MAGALVI</p><p className="mx-auto mt-2 max-w-2xl">Esta plataforma ayuda a organizar y compartir documentos. No sustituye la evaluación de un profesional de salud.</p></footer>
