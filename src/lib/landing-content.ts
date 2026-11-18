@@ -1,4 +1,4 @@
-export const PRODUCT_URL = "https://project-pmewh.vercel.app";
+export const PRODUCT_URL = "https://enlace-salud-fase3.vercel.app";
 export const audiences = {
   doctor: {
     label: "Para doctores", href: "/", eyebrow: "INFORMACIÓN PARA TU CONSULTA",
