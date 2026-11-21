@@ -1,4 +1,5 @@
-// Official V2 application domain; it must be deployed before users can sign in.\nexport const PRODUCT_URL = "https://app.enlacepaciente.com";
+// Official V2 application domain; it must be deployed before users can sign in.
+export const PRODUCT_URL = "https://app.enlacepaciente.com";
 export const audiences = {
   doctor: {
     label: "Para doctores", href: "/", eyebrow: "INFORMACIÓN PARA TU CONSULTA",
