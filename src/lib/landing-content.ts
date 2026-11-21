@@ -1,6 +1,4 @@
-// Configure NEXT_PUBLIC_PRODUCT_URL=https://app.enlacepaciente.com when V2 is live.
-// Until then, keep the current working application URL.
-export const PRODUCT_URL = (process.env.NEXT_PUBLIC_PRODUCT_URL || "https://project-pmewh.vercel.app").replace(/\/$/, "");
+// Official V2 application domain; it must be deployed before users can sign in.\nexport const PRODUCT_URL = "https://app.enlacepaciente.com";
 export const audiences = {
   doctor: {
     label: "Para doctores", href: "/", eyebrow: "INFORMACIÓN PARA TU CONSULTA",
