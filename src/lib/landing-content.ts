@@ -1,4 +1,6 @@
-// Configure NEXT_PUBLIC_PRODUCT_URL=https://app.enlacepaciente.com when V2 is live.\n// Until then, keep the current working application URL.\nexport const PRODUCT_URL = (process.env.NEXT_PUBLIC_PRODUCT_URL || "https://project-pmewh.vercel.app").replace(/\\/$/, "");
+// Configure NEXT_PUBLIC_PRODUCT_URL=https://app.enlacepaciente.com when V2 is live.
+// Until then, keep the current working application URL.
+export const PRODUCT_URL = (process.env.NEXT_PUBLIC_PRODUCT_URL || "https://project-pmewh.vercel.app").replace(/\/$/, "");
 export const audiences = {
   doctor: {
     label: "Para doctores", href: "/", eyebrow: "INFORMACIÓN PARA TU CONSULTA",
