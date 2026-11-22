@@ -7,7 +7,8 @@ const secondary = "inline-flex min-h-12 items-center justify-center rounded-xl b
 
 export default function LandingPage({ audience }: { audience: Audience }) {
   const data = audiences[audience];
-  const actionHref = audience === "paciente" ? `${PRODUCT_URL}/signup` : `https://wa.me/17879444563?text=${encodeURIComponent(data.message)}`;
+  const productReady = Boolean(PRODUCT_URL);
+  const actionHref = audience === "paciente" ? (productReady ? `${PRODUCT_URL}/signup` : "#registro-pendiente") : `https://wa.me/17879444563?text=${encodeURIComponent(data.message)}`;
   return (
     <>
       <a href="#contenido" className="sr-only focus:not-sr-only focus:block focus:p-4">Saltar al contenido</a>
@@ -17,7 +18,7 @@ export default function LandingPage({ audience }: { audience: Audience }) {
             <Image src="/enlace-salud-icon-transparent.png" alt="" width={40} height={40} priority />
             <span className="text-lg sm:text-xl">Enlace Salud</span>
           </Link>
-          <a className="inline-flex min-h-12 items-center rounded-xl border border-blue-700 px-4 font-semibold text-blue-700 hover:bg-blue-50" href={`${PRODUCT_URL}/login`}>Entrar</a>
+          {productReady ? <a className="inline-flex min-h-12 items-center rounded-xl border border-blue-700 px-4 font-semibold text-blue-700 hover:bg-blue-50" href={`${PRODUCT_URL}/login`}>Entrar</a> : <span className="inline-flex min-h-12 items-center rounded-xl border border-slate-300 px-4 font-semibold text-slate-500" title="Acceso V2 pendiente de activación">Acceso próximamente</span>}
         </div>
       </header>
       <main id="contenido">
@@ -28,7 +29,7 @@ export default function LandingPage({ audience }: { audience: Audience }) {
             <h1 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">{data.title}</h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">{data.intro}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a className={primary} href={actionHref}>{data.action}</a>
+              {audience === "paciente" && !productReady ? <span id="registro-pendiente" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-slate-200 px-6 py-3 text-lg font-semibold text-slate-700">Registro próximamente</span> : <a className={primary} href={actionHref}>{data.action}</a>}
               <a className={secondary} href="#how">Ver cómo funciona</a>
             </div>
             {audience !== "paciente" && <p className="mt-4 text-base text-slate-600">La solicitud de demostración se abre en WhatsApp.</p>}
@@ -66,7 +67,7 @@ export default function LandingPage({ audience }: { audience: Audience }) {
           </div>
         </section>
         <section className="bg-blue-800 px-4 py-16 text-center text-white sm:px-6">
-          <div className="mx-auto max-w-3xl"><h2 className="text-3xl font-bold sm:text-4xl">{data.closing}</h2><a className="mt-8 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-blue-800 hover:bg-blue-50" href={actionHref}>{data.action}</a><p className="mt-5 text-base text-blue-100">¿Ya tienes cuenta? <a className="inline-flex min-h-12 items-center font-semibold underline underline-offset-4" href={`${PRODUCT_URL}/login`}>Entra aquí</a></p></div>
+          <div className="mx-auto max-w-3xl"><h2 className="text-3xl font-bold sm:text-4xl">{data.closing}</h2>{audience === "paciente" && !productReady ? <p className="mt-8 text-lg font-semibold text-white">Registro disponible cuando se active Enlace Salud V2.</p> : <a className="mt-8 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 py-3 text-lg font-semibold text-blue-800 hover:bg-blue-50" href={actionHref}>{data.action}</a>}{productReady && <p className="mt-5 text-base text-blue-100">¿Ya tienes cuenta? <a className="inline-flex min-h-12 items-center font-semibold underline underline-offset-4" href={`${PRODUCT_URL}/login`}>Entra aquí</a></p>}</div>
         </section>
       </main>
       <footer className="px-4 py-8 text-center text-base text-slate-600"><p>Enlace Salud · MAGALVI</p><p className="mx-auto mt-2 max-w-2xl">Esta plataforma ayuda a organizar y compartir documentos. No sustituye la evaluación de un profesional de salud.</p></footer>
