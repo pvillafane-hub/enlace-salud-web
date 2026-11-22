@@ -1,0 +1,37 @@
+name: Landing V2 integration checks
+on:
+  push:
+    branches: [feature/v2-domain-landing-integration]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-landings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Check types
+        run: npx tsc --noEmit
+      - name: Build landing pages
+        run: npm run build
+      - name: Verify routes and host rewrite
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const cfg=fs.readFileSync('next.config.ts','utf8');
+          const root=fs.readFileSync('app/page.tsx','utf8');
+          const patient=fs.readFileSync('app/paciente/page.tsx','utf8');
+          const links=fs.readFileSync('src/lib/landing-content.ts','utf8');
+          for (const value of ['pacientes.enlacepaciente.com','destination: "/paciente"']) {
+            if (!cfg.includes(value)) throw Error('Missing rewrite: '+value);
+          }
+          if (!root.includes('audience="doctor"')) throw Error('Doctor route missing');
+          if (!patient.includes('audience="paciente"')) throw Error('Patient route missing');
+          if (!links.includes('NEXT_PUBLIC_PRODUCT_URL')) throw Error('Product URL configuration missing');
+          console.log('Landing route and host rewrite checks passed');
+          NODE
